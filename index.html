@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Right Fit Evidence — Solutions Beyond Borders</title>
+  <meta name="description" content="Right Fit Evidence provides evidence-based solutions beyond borders. Expert research, consulting, and documentation services." />
+  <meta property="og:title" content="Right Fit Evidence" />
+  <meta property="og:description" content="Solutions Beyond Borders" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #f97316;
+      --orange-dark: #ea6a05;
+      --dark: #1a1a2e;
+      --dark2: #16213e;
+      --gray: #6b7280;
+      --light-gray: #f9fafb;
+      --white: #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: #111827;
+      background: #fff;
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .nav-logo img {
+      height: 44px;
+      width: auto;
+    }
+    .nav-logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+    .nav-logo-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: #111827;
+      line-height: 1.2;
+    }
+    .nav-logo-tagline {
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--orange);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      color: #374151;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--orange); }
+    .nav-cta {
+      background: var(--orange);
+      color: #fff !important;
+      padding: 10px 22px;
+      border-radius: 8px;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--orange-dark) !important; color: #fff !important; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 68px 24px 0;
+      background: linear-gradient(135deg, #fff7ed 0%, #fff 50%, #fef3c7 100%);
+    }
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      padding: 80px 0;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      color: var(--orange);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .hero-badge span { font-size: 16px; }
+    .hero h1 {
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 800;
+      line-height: 1.1;
+      color: #111827;
+      margin-bottom: 20px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--orange);
+    }
+    .hero-sub {
+      font-size: 18px;
+      color: var(--gray);
+      margin-bottom: 40px;
+      max-width: 480px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--orange);
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--orange-dark); transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent;
+      color: #374151;
+      padding: 14px 32px;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 2px solid #d1d5db;
+      transition: border-color 0.2s, color 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+    .btn-outline:hover { border-color: var(--orange); color: var(--orange); transform: translateY(-1px); }
+    .hero-image-wrap {
+      position: relative;
+    }
+    .hero-image-wrap img {
+      width: 100%;
+      border-radius: 20px;
+      object-fit: cover;
+      height: 480px;
+      box-shadow: 0 32px 64px rgba(0,0,0,0.12);
+    }
+    .hero-stat-card {
+      position: absolute;
+      bottom: -20px;
+      left: -24px;
+      background: #fff;
+      border-radius: 14px;
+      padding: 16px 22px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .hero-stat-icon {
+      width: 42px;
+      height: 42px;
+      background: #fff7ed;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+    .hero-stat-num {
+      font-size: 22px;
+      font-weight: 800;
+      color: #111827;
+      line-height: 1;
+    }
+    .hero-stat-label {
+      font-size: 11px;
+      color: var(--gray);
+      font-weight: 500;
+      margin-top: 2px;
+    }
+
+    /* ── SECTION WRAPPER ── */
+    section { padding: 96px 24px; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 800;
+      line-height: 1.15;
+      color: #111827;
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      font-size: 17px;
+      color: var(--gray);
+      max-width: 600px;
+      margin-bottom: 56px;
+    }
+
+    /* ── SERVICES ── */
+    #services { background: var(--light-gray); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+    }
+    .service-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 32px;
+      border: 1px solid #e5e7eb;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.08); }
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      background: #fff7ed;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .service-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 10px;
+    }
+    .service-card p {
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.7;
+    }
+
+    /* ── SERVICES IMAGE FEATURE ── */
+    .services-feature {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      margin-top: 72px;
+    }
+    .services-feature img {
+      width: 100%;
+      border-radius: 20px;
+      object-fit: cover;
+      height: 400px;
+      box-shadow: 0 24px 48px rgba(0,0,0,0.1);
+    }
+    .services-feature-text h3 {
+      font-size: 28px;
+      font-weight: 800;
+      color: #111827;
+      margin-bottom: 16px;
+    }
+    .services-feature-text p {
+      font-size: 16px;
+      color: var(--gray);
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+    .feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .feature-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #374151;
+    }
+    .feature-list li::before {
+      content: '';
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      background: var(--orange);
+      border-radius: 50%;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+      background-size: 12px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    /* ── ABOUT ── */
+    #about {
+      background: #fff;
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .about-image-wrap { position: relative; }
+    .about-image-wrap img {
+      width: 100%;
+      border-radius: 20px;
+      object-fit: cover;
+      height: 440px;
+      box-shadow: 0 24px 48px rgba(0,0,0,0.1);
+    }
+    .about-badge {
+      position: absolute;
+      top: -16px;
+      right: -16px;
+      background: var(--orange);
+      color: #fff;
+      border-radius: 14px;
+      padding: 20px 24px;
+      text-align: center;
+      box-shadow: 0 12px 32px rgba(249,115,22,0.35);
+    }
+    .about-badge-num {
+      font-size: 36px;
+      font-weight: 800;
+      line-height: 1;
+    }
+    .about-badge-text {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      opacity: 0.9;
+      margin-top: 4px;
+    }
+    .about-text p {
+      font-size: 16px;
+      color: var(--gray);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .about-stat {
+      text-align: center;
+      background: var(--light-gray);
+      border-radius: 14px;
+      padding: 20px 12px;
+    }
+    .about-stat-num {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--orange);
+    }
+    .about-stat-label {
+      font-size: 12px;
+      color: var(--gray);
+      font-weight: 500;
+      margin-top: 4px;
+    }
+
+    /* ── WHY US ── */
+    #why { background: var(--dark); color: #fff; }
+    #why .section-title { color: #fff; }
+    #why .section-sub { color: #9ca3af; }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+    .why-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 32px;
+      transition: background 0.2s;
+    }
+    .why-card:hover { background: rgba(249,115,22,0.1); border-color: rgba(249,115,22,0.3); }
+    .why-num {
+      font-size: 48px;
+      font-weight: 800;
+      color: var(--orange);
+      opacity: 0.3;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    .why-card h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .why-card p {
+      font-size: 14px;
+      color: #9ca3af;
+      line-height: 1.7;
+    }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--light-gray); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .contact-info h3 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .contact-info p {
+      font-size: 15px;
+      color: var(--gray);
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .contact-item-icon {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      background: #fff;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .contact-item-text strong {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 2px;
+    }
+    .contact-item-text span {
+      font-size: 14px;
+      color: var(--gray);
+    }
+    .contact-form {
+      background: #fff;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+    }
+    .contact-form h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+    .form-group label {
+      font-size: 13px;
+      font-weight: 600;
+      color: #374151;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      padding: 11px 14px;
+      border: 1.5px solid #e5e7eb;
+      border-radius: 9px;
+      font-size: 14px;
+      font-family: inherit;
+      color: #111827;
+      background: #fff;
+      transition: border-color 0.2s;
+      outline: none;
+      resize: none;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus { border-color: var(--orange); }
+    .form-group textarea { min-height: 110px; }
+    .form-submit {
+      width: 100%;
+      background: var(--orange);
+      color: #fff;
+      border: none;
+      padding: 14px 24px;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+      font-family: inherit;
+    }
+    .form-submit:hover { background: var(--orange-dark); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark);
+      color: #9ca3af;
+      padding: 60px 24px 32px;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand img {
+      height: 48px;
+      margin-bottom: 16px;
+      filter: brightness(0) invert(1);
+      opacity: 0.85;
+    }
+    .footer-brand p {
+      font-size: 14px;
+      line-height: 1.7;
+      max-width: 260px;
+    }
+    .footer-col h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a {
+      text-decoration: none;
+      font-size: 14px;
+      color: #9ca3af;
+      transition: color 0.2s;
+    }
+    .footer-col ul li a:hover { color: var(--orange); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+    }
+
+    /* ── THANK YOU MODAL ── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(4px);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal {
+      background: #fff;
+      border-radius: 20px;
+      padding: 48px 40px;
+      max-width: 440px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.2);
+    }
+    .modal-icon {
+      width: 72px;
+      height: 72px;
+      background: #dcfce7;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      margin: 0 auto 24px;
+    }
+    .modal h3 { font-size: 22px; font-weight: 800; margin-bottom: 10px; }
+    .modal p { font-size: 15px; color: var(--gray); margin-bottom: 28px; line-height: 1.6; }
+    .modal-close {
+      background: var(--orange);
+      color: #fff;
+      border: none;
+      padding: 12px 32px;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero-inner,
+      .services-feature,
+      .about-grid,
+      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .hero-image-wrap { order: -1; }
+      .hero-image-wrap img,
+      .services-feature img,
+      .about-image-wrap img { height: 300px; }
+      .hero-stat-card { left: 12px; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+      .nav-links { display: none; }
+      .about-badge { top: -10px; right: -10px; }
+    }
+    @media (max-width: 600px) {
+      section { padding: 64px 20px; }
+      .form-row { grid-template-columns: 1fr; }
+      .about-stats { grid-template-columns: repeat(3, 1fr); }
+      .footer-top { grid-template-columns: 1fr; }
+      .contact-form { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <img src="logo.png" alt="Right Fit Evidence Logo" />
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">Right Fit Evidence</span>
+        <span class="nav-logo-tagline">Solutions Beyond Borders</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-badge"><span>✦</span> Solutions Beyond Borders</div>
+      <h1>Evidence-Based Solutions That <em>Drive Impact</em></h1>
+      <p class="hero-sub">We bridge the gap between research and real-world results — delivering rigorous, actionable evidence to organizations across the globe.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Work With Us</a>
+        <a href="#services" class="btn-outline">Explore Services</a>
+      </div>
+    </div>
+    <div class="hero-image-wrap">
+      <img src="hero.png" alt="Right Fit Evidence team in a strategy session" />
+      <div class="hero-stat-card">
+        <div class="hero-stat-icon">🌍</div>
+        <div>
+          <div class="hero-stat-num">50+</div>
+          <div class="hero-stat-label">Countries Served</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <div class="section-label">What We Do</div>
+    <h2 class="section-title">Comprehensive Evidence Solutions</h2>
+    <p class="section-sub">From research design to implementation, we provide end-to-end evidence services tailored to your context and goals.</p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🔬</div>
+        <h3>Research & Evaluation</h3>
+        <p>Rigorous evaluations, impact assessments, and research designs that generate credible, decision-relevant evidence for programs and policies.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📊</div>
+        <h3>Data Analysis & Insights</h3>
+        <p>Advanced quantitative and qualitative data analysis, visualization, and interpretation — turning raw data into clear, actionable insights.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📋</div>
+        <h3>Documentation & Reporting</h3>
+        <p>Professional documentation, technical reports, policy briefs, and communication materials crafted for diverse audiences and stakeholders.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🤝</div>
+        <h3>Consulting & Advisory</h3>
+        <p>Strategic consulting to help organizations build evidence ecosystems, improve decision-making, and strengthen monitoring & evaluation systems.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎓</div>
+        <h3>Training & Capacity Building</h3>
+        <p>Tailored workshops and training programs to build internal capacity for evidence generation, use, and management within your organization.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🌐</div>
+        <h3>Cross-Border Collaboration</h3>
+        <p>Facilitating multi-country research initiatives and knowledge exchange programs across Africa, Asia, and beyond.</p>
+      </div>
+    </div>
+
+    <div class="services-feature">
+      <img src="services.png" alt="Evidence documentation and analysis work" />
+      <div class="services-feature-text">
+        <h3>From Data to Decisions</h3>
+        <p>Our approach ensures that evidence isn't just collected — it's contextualized, communicated, and actually used. We work alongside your team at every stage of the evidence journey.</p>
+        <ul class="feature-list">
+          <li>Theory of change and results frameworks</li>
+          <li>Mixed-methods research design</li>
+          <li>Real-time monitoring systems</li>
+          <li>Stakeholder engagement and co-creation</li>
+          <li>Knowledge management and dissemination</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-image-wrap">
+        <img src="about.png" alt="Right Fit Evidence team collaboration" />
+        <div class="about-badge">
+          <div class="about-badge-num">10+</div>
+          <div class="about-badge-text">Years of Experience</div>
+        </div>
+      </div>
+      <div class="about-text">
+        <div class="section-label">About Us</div>
+        <h2 class="section-title">Who We Are</h2>
+        <p>Right Fit Evidence is a multidisciplinary firm dedicated to generating and using high-quality evidence to improve lives. Our team of researchers, analysts, and consultants brings deep expertise across development, health, education, and governance sectors.</p>
+        <p>We believe the right evidence, in the right hands, at the right time, can transform outcomes. That's why we go beyond data collection — we ensure evidence is relevant, timely, and embedded in decisions that matter.</p>
+        <p>Working across borders and cultures, we combine global best practices with deep local knowledge to deliver solutions that truly fit each context.</p>
+        <div class="about-stats">
+          <div class="about-stat">
+            <div class="about-stat-num">200+</div>
+            <div class="about-stat-label">Projects Delivered</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-num">50+</div>
+            <div class="about-stat-label">Countries Served</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-num">98%</div>
+            <div class="about-stat-label">Client Satisfaction</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="section-inner">
+    <div class="section-label">Why Right Fit Evidence</div>
+    <h2 class="section-title">The Right Fit Difference</h2>
+    <p class="section-sub">We don't just produce evidence — we make it count. Here's what sets us apart.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-num">01</div>
+        <h3>Context-Sensitive Approach</h3>
+        <p>Every solution is tailored to your specific environment, culture, and constraints — no cookie-cutter templates.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">02</div>
+        <h3>Rigorous Methodology</h3>
+        <p>We apply the highest standards of research integrity, combining quantitative precision with qualitative depth.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">03</div>
+        <h3>Actionable Outputs</h3>
+        <p>Our deliverables are designed to be used — clear, accessible, and directly connected to decision-making processes.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">04</div>
+        <h3>Trusted Partnership</h3>
+        <p>We build long-term relationships built on transparency, reliability, and a genuine commitment to your success.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-label">Get In Touch</div>
+    <h2 class="section-title">Let's Work Together</h2>
+    <p class="section-sub">Ready to find the right fit? Reach out and let's discuss how we can support your evidence needs.</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>We'd love to hear from you</h3>
+        <p>Whether you have a specific project in mind or just want to explore what's possible, we're here to help. Our team typically responds within 24 hours.</p>
+        <div class="contact-item">
+          <div class="contact-item-icon">📧</div>
+          <div class="contact-item-text">
+            <strong>Email Us</strong>
+            <span>info@rightfitevidence.com</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">📞</div>
+          <div class="contact-item-text">
+            <strong>Call Us</strong>
+            <span>+1 (555) 000-0000</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">🌍</div>
+          <div class="contact-item-text">
+            <strong>Global Reach</strong>
+            <span>Africa · Asia · Europe · Americas</span>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3>Send Us a Message</h3>
+        <form id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" placeholder="Jane" required />
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" placeholder="Doe" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="jane@organization.org" required />
+          </div>
+          <div class="form-group">
+            <label for="service">Service of Interest</label>
+            <select id="service">
+              <option value="">Select a service...</option>
+              <option>Research & Evaluation</option>
+              <option>Data Analysis & Insights</option>
+              <option>Documentation & Reporting</option>
+              <option>Consulting & Advisory</option>
+              <option>Training & Capacity Building</option>
+              <option>Cross-Border Collaboration</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="Tell us about your project or question..." required></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Message →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="logo.png" alt="Right Fit Evidence" />
+        <p>Evidence-based solutions that drive real-world impact across borders, sectors, and contexts.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Research & Evaluation</a></li>
+          <li><a href="#services">Data Analysis</a></li>
+          <li><a href="#services">Documentation</a></li>
+          <li><a href="#services">Consulting</a></li>
+          <li><a href="#services">Training</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#why">Why Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">Twitter / X</a></li>
+          <li><a href="#">ResearchGate</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 Right Fit Evidence. All rights reserved.</span>
+      <span>Solutions Beyond Borders</span>
+    </div>
+  </div>
+</footer>
+
+<!-- THANK YOU MODAL -->
+<div class="modal-overlay" id="thankYouModal">
+  <div class="modal">
+    <div class="modal-icon">✓</div>
+    <h3>Message Sent!</h3>
+    <p>Thank you for reaching out. Our team will review your message and get back to you within 24 hours.</p>
+    <button class="modal-close" onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+<script>
+  function handleSubmit(e) {
+    e.preventDefault();
+    document.getElementById('thankYouModal').classList.add('open');
+    e.target.reset();
+  }
+  function closeModal() {
+    document.getElementById('thankYouModal').classList.remove('open');
+  }
+
+  // Smooth active nav highlight
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 80) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? '#f97316' : '';
+    });
+  });
+</script>
+</body>
+</html>
