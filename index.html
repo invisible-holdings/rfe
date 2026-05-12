@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Right Fit Evidence — Solutions Beyond Borders</title>
-  <meta name="description" content="Right Fit Evidence provides evidence-based solutions beyond borders. Expert research, consulting, and documentation services." />
-  <meta property="og:title" content="Right Fit Evidence" />
-  <meta property="og:description" content="Solutions Beyond Borders" />
+  <title>Right Fit Evidence Pty Ltd — Solutions Beyond Borders</title>
+  <meta name="description" content="Right Fit Evidence Pty Ltd — Evidence-based research, migration advisory, web development, due diligence and consulting solutions based in Maseru, Lesotho." />
+  <meta property="og:title" content="Right Fit Evidence Pty Ltd" />
+  <meta property="og:description" content="Solutions Beyond Borders — Maseru, Lesotho" />
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,8 +17,8 @@
     :root {
       --orange: #f97316;
       --orange-dark: #ea6a05;
+      --orange-light: #fff7ed;
       --dark: #1a1a2e;
-      --dark2: #16213e;
       --gray: #6b7280;
       --light-gray: #f9fafb;
       --white: #ffffff;
@@ -38,15 +38,15 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(8px);
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(10px);
       border-bottom: 1px solid #e5e7eb;
     }
     .nav-inner {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 24px;
-      height: 68px;
+      height: 148px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -54,34 +54,18 @@
     .nav-logo {
       display: flex;
       align-items: center;
-      gap: 12px;
       text-decoration: none;
+      flex-shrink: 0;
     }
+    /* Header: logo only, 3× original size (44px → 132px) */
     .nav-logo img {
-      height: 44px;
+      height: 132px;
       width: auto;
-    }
-    .nav-logo-text {
-      display: flex;
-      flex-direction: column;
-    }
-    .nav-logo-name {
-      font-size: 16px;
-      font-weight: 700;
-      color: #111827;
-      line-height: 1.2;
-    }
-    .nav-logo-tagline {
-      font-size: 10px;
-      font-weight: 500;
-      color: var(--orange);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
     }
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 32px;
+      gap: 28px;
       list-style: none;
     }
     .nav-links a {
@@ -101,12 +85,29 @@
     }
     .nav-cta:hover { background: var(--orange-dark) !important; color: #fff !important; }
 
+    /* Hamburger (mobile) */
+    .nav-burger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 6px;
+    }
+    .nav-burger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #374151;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
     /* ── HERO ── */
     .hero {
       min-height: 100vh;
       display: flex;
       align-items: center;
-      padding: 68px 24px 0;
+      padding: 148px 24px 0;
       background: linear-gradient(135deg, #fff7ed 0%, #fff 50%, #fef3c7 100%);
     }
     .hero-inner {
@@ -122,7 +123,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: #fff7ed;
+      background: var(--orange-light);
       border: 1px solid #fed7aa;
       color: var(--orange);
       font-size: 12px;
@@ -135,27 +136,20 @@
     }
     .hero-badge span { font-size: 16px; }
     .hero h1 {
-      font-size: clamp(36px, 5vw, 56px);
+      font-size: clamp(34px, 5vw, 54px);
       font-weight: 800;
       line-height: 1.1;
       color: #111827;
       margin-bottom: 20px;
     }
-    .hero h1 em {
-      font-style: normal;
-      color: var(--orange);
-    }
+    .hero h1 em { font-style: normal; color: var(--orange); }
     .hero-sub {
       font-size: 18px;
       color: var(--gray);
       margin-bottom: 40px;
       max-width: 480px;
     }
-    .hero-actions {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
     .btn-primary {
       background: var(--orange);
       color: #fff;
@@ -181,9 +175,7 @@
       display: inline-block;
     }
     .btn-outline:hover { border-color: var(--orange); color: var(--orange); transform: translateY(-1px); }
-    .hero-image-wrap {
-      position: relative;
-    }
+    .hero-image-wrap { position: relative; }
     .hero-image-wrap img {
       width: 100%;
       border-radius: 20px;
@@ -204,59 +196,37 @@
       gap: 12px;
     }
     .hero-stat-icon {
-      width: 42px;
-      height: 42px;
-      background: #fff7ed;
+      width: 42px; height: 42px;
+      background: var(--orange-light);
       border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       font-size: 20px;
     }
-    .hero-stat-num {
-      font-size: 22px;
-      font-weight: 800;
-      color: #111827;
-      line-height: 1;
-    }
-    .hero-stat-label {
-      font-size: 11px;
-      color: var(--gray);
-      font-weight: 500;
-      margin-top: 2px;
-    }
+    .hero-stat-num { font-size: 22px; font-weight: 800; color: #111827; line-height: 1; }
+    .hero-stat-label { font-size: 11px; color: var(--gray); font-weight: 500; margin-top: 2px; }
 
     /* ── SECTION WRAPPER ── */
     section { padding: 96px 24px; }
     .section-inner { max-width: 1200px; margin: 0 auto; }
     .section-label {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--orange);
-      margin-bottom: 12px;
+      font-size: 12px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--orange); margin-bottom: 12px;
     }
     .section-title {
-      font-size: clamp(28px, 4vw, 42px);
-      font-weight: 800;
-      line-height: 1.15;
-      color: #111827;
-      margin-bottom: 16px;
+      font-size: clamp(28px, 4vw, 42px); font-weight: 800;
+      line-height: 1.15; color: #111827; margin-bottom: 16px;
     }
     .section-sub {
-      font-size: 17px;
-      color: var(--gray);
-      max-width: 600px;
-      margin-bottom: 56px;
+      font-size: 17px; color: var(--gray);
+      max-width: 640px; margin-bottom: 56px; line-height: 1.7;
     }
 
     /* ── SERVICES ── */
     #services { background: var(--light-gray); }
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 28px;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 24px;
     }
     .service-card {
       background: #fff;
@@ -266,30 +236,22 @@
       transition: transform 0.2s, box-shadow 0.2s;
     }
     .service-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.08); }
+    .service-card.highlight {
+      border-color: var(--orange);
+      background: linear-gradient(135deg, #fff7ed, #fff);
+    }
     .service-icon {
-      width: 52px;
-      height: 52px;
-      background: #fff7ed;
+      width: 52px; height: 52px;
+      background: var(--orange-light);
       border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      margin-bottom: 20px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px; margin-bottom: 20px;
     }
-    .service-card h3 {
-      font-size: 18px;
-      font-weight: 700;
-      color: #111827;
-      margin-bottom: 10px;
-    }
-    .service-card p {
-      font-size: 14px;
-      color: var(--gray);
-      line-height: 1.7;
-    }
+    .service-card.highlight .service-icon { background: #fed7aa; }
+    .service-card h3 { font-size: 18px; font-weight: 700; color: #111827; margin-bottom: 10px; }
+    .service-card p { font-size: 14px; color: var(--gray); line-height: 1.7; }
 
-    /* ── SERVICES IMAGE FEATURE ── */
+    /* ── SERVICES FEATURE ── */
     .services-feature {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -298,122 +260,205 @@
       margin-top: 72px;
     }
     .services-feature img {
-      width: 100%;
-      border-radius: 20px;
-      object-fit: cover;
-      height: 400px;
+      width: 100%; border-radius: 20px;
+      object-fit: cover; height: 420px;
       box-shadow: 0 24px 48px rgba(0,0,0,0.1);
     }
     .services-feature-text h3 {
-      font-size: 28px;
-      font-weight: 800;
-      color: #111827;
-      margin-bottom: 16px;
+      font-size: 28px; font-weight: 800; color: #111827; margin-bottom: 16px;
     }
     .services-feature-text p {
-      font-size: 16px;
-      color: var(--gray);
-      line-height: 1.8;
-      margin-bottom: 24px;
+      font-size: 16px; color: var(--gray); line-height: 1.8; margin-bottom: 24px;
     }
-    .feature-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
+    .feature-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
     .feature-list li {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 14px;
-      font-weight: 500;
-      color: #374151;
+      display: flex; align-items: center; gap: 10px;
+      font-size: 14px; font-weight: 500; color: #374151;
     }
     .feature-list li::before {
       content: '';
-      width: 20px;
-      height: 20px;
-      min-width: 20px;
+      width: 20px; height: 20px; min-width: 20px;
       background: var(--orange);
       border-radius: 50%;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
-      background-size: 12px;
-      background-repeat: no-repeat;
-      background-position: center;
+      background-size: 12px; background-repeat: no-repeat; background-position: center;
     }
 
-    /* ── ABOUT ── */
-    #about {
-      background: #fff;
+    /* ── MAC SECTION ── */
+    #mac { background: #fff; }
+    .mac-header {
+      text-align: center;
+      margin-bottom: 56px;
     }
-    .about-grid {
+    .mac-header .section-sub { margin: 0 auto; }
+    .mac-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 64px;
-      align-items: center;
+      align-items: start;
+    }
+    .mac-info-block {
+      background: var(--light-gray);
+      border-radius: 20px;
+      padding: 36px;
+    }
+    .mac-info-block h3 {
+      font-size: 20px; font-weight: 800; color: #111827; margin-bottom: 20px;
+      padding-bottom: 16px; border-bottom: 2px solid #e5e7eb;
+    }
+    .mac-row {
+      display: flex; gap: 14px; margin-bottom: 16px;
+    }
+    .mac-row-icon {
+      font-size: 20px; margin-top: 2px; flex-shrink: 0;
+    }
+    .mac-row-text strong {
+      display: block; font-size: 13px; font-weight: 700;
+      color: #111827; margin-bottom: 3px;
+    }
+    .mac-row-text span {
+      font-size: 14px; color: var(--gray); line-height: 1.5;
+    }
+    .mac-services-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    .mac-services-table thead tr {
+      background: var(--orange);
+      color: #fff;
+    }
+    .mac-services-table th {
+      padding: 10px 14px; text-align: left;
+      font-weight: 600; font-size: 13px;
+    }
+    .mac-services-table td {
+      padding: 10px 14px; color: #374151;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .mac-services-table tr:last-child td { border-bottom: none; }
+    .mac-services-table tr:nth-child(even) td { background: #fafafa; }
+    .mac-fees {
+      margin-top: 32px;
+      background: var(--dark);
+      border-radius: 16px;
+      padding: 28px 32px;
+      color: #fff;
+    }
+    .mac-fees h4 {
+      font-size: 16px; font-weight: 700; color: #fff;
+      margin-bottom: 16px; letter-spacing: 0.03em;
+    }
+    .mac-fee-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,0.08);
+      font-size: 14px;
+    }
+    .mac-fee-row:last-child { border-bottom: none; }
+    .mac-fee-label { color: #d1d5db; }
+    .mac-fee-price { color: var(--orange); font-weight: 700; }
+    .mac-disclaimer {
+      margin-top: 32px;
+      background: #fff3cd;
+      border: 1px solid #ffc107;
+      border-radius: 12px;
+      padding: 18px 22px;
+      font-size: 13px;
+      color: #856404;
+      line-height: 1.6;
+    }
+    .mac-disclaimer strong { display: block; margin-bottom: 4px; color: #533d00; }
+    .mac-warning {
+      margin-top: 16px;
+      background: #fee2e2;
+      border: 1px solid #fca5a5;
+      border-radius: 12px;
+      padding: 18px 22px;
+      font-size: 13px;
+      color: #7f1d1d;
+      line-height: 1.6;
+    }
+    .mac-warning strong { display: block; margin-bottom: 4px; }
+    .testimonial-card {
+      background: var(--orange-light);
+      border-left: 4px solid var(--orange);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-top: 28px;
+    }
+    .testimonial-card p {
+      font-size: 15px; font-style: italic; color: #374151; line-height: 1.7; margin-bottom: 10px;
+    }
+    .testimonial-card cite {
+      font-size: 13px; font-weight: 600; color: var(--orange); font-style: normal;
+    }
+
+    /* ── ABOUT ── */
+    #about { background: var(--light-gray); }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 64px; align-items: center;
     }
     .about-image-wrap { position: relative; }
     .about-image-wrap img {
-      width: 100%;
-      border-radius: 20px;
-      object-fit: cover;
-      height: 440px;
+      width: 100%; border-radius: 20px;
+      object-fit: cover; height: 440px;
       box-shadow: 0 24px 48px rgba(0,0,0,0.1);
     }
     .about-badge {
-      position: absolute;
-      top: -16px;
-      right: -16px;
-      background: var(--orange);
-      color: #fff;
-      border-radius: 14px;
-      padding: 20px 24px;
+      position: absolute; top: -16px; right: -16px;
+      background: var(--orange); color: #fff;
+      border-radius: 14px; padding: 20px 24px;
       text-align: center;
       box-shadow: 0 12px 32px rgba(249,115,22,0.35);
     }
-    .about-badge-num {
-      font-size: 36px;
-      font-weight: 800;
-      line-height: 1;
-    }
+    .about-badge-num { font-size: 36px; font-weight: 800; line-height: 1; }
     .about-badge-text {
-      font-size: 11px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      opacity: 0.9;
-      margin-top: 4px;
+      font-size: 11px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.05em;
+      opacity: 0.9; margin-top: 4px;
     }
     .about-text p {
-      font-size: 16px;
-      color: var(--gray);
-      line-height: 1.8;
-      margin-bottom: 20px;
+      font-size: 16px; color: var(--gray); line-height: 1.8; margin-bottom: 20px;
     }
+    .vmv-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 28px;
+    }
+    .vmv-card {
+      background: #fff; border-radius: 14px; padding: 20px;
+      border-left: 3px solid var(--orange);
+    }
+    .vmv-card h4 {
+      font-size: 13px; font-weight: 700; color: var(--orange);
+      text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px;
+    }
+    .vmv-card p { font-size: 13px; color: var(--gray); line-height: 1.6; margin: 0; }
     .about-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 40px;
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 16px; margin-top: 28px;
     }
     .about-stat {
-      text-align: center;
+      text-align: center; background: #fff;
+      border-radius: 14px; padding: 18px 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .about-stat-num { font-size: 26px; font-weight: 800; color: var(--orange); }
+    .about-stat-label { font-size: 11px; color: var(--gray); font-weight: 500; margin-top: 4px; }
+
+    /* ── VALUES ── */
+    #values { background: #fff; }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+    }
+    .value-card {
       background: var(--light-gray);
-      border-radius: 14px;
-      padding: 20px 12px;
+      border-radius: 16px; padding: 28px;
+      border-top: 3px solid var(--orange);
     }
-    .about-stat-num {
-      font-size: 28px;
-      font-weight: 800;
-      color: var(--orange);
-    }
-    .about-stat-label {
-      font-size: 12px;
-      color: var(--gray);
-      font-weight: 500;
-      margin-top: 4px;
-    }
+    .value-card h3 { font-size: 16px; font-weight: 700; color: #111827; margin-bottom: 8px; }
+    .value-card p { font-size: 14px; color: var(--gray); line-height: 1.6; }
 
     /* ── WHY US ── */
     #why { background: var(--dark); color: #fff; }
@@ -427,136 +472,78 @@
     .why-card {
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 16px;
-      padding: 32px;
+      border-radius: 16px; padding: 32px;
       transition: background 0.2s;
     }
-    .why-card:hover { background: rgba(249,115,22,0.1); border-color: rgba(249,115,22,0.3); }
+    .why-card:hover {
+      background: rgba(249,115,22,0.1);
+      border-color: rgba(249,115,22,0.3);
+    }
     .why-num {
-      font-size: 48px;
-      font-weight: 800;
-      color: var(--orange);
-      opacity: 0.3;
-      line-height: 1;
-      margin-bottom: 16px;
+      font-size: 48px; font-weight: 800; color: var(--orange);
+      opacity: 0.3; line-height: 1; margin-bottom: 16px;
     }
-    .why-card h3 {
-      font-size: 17px;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 10px;
-    }
-    .why-card p {
-      font-size: 14px;
-      color: #9ca3af;
-      line-height: 1.7;
-    }
+    .why-card h3 { font-size: 17px; font-weight: 700; color: #fff; margin-bottom: 10px; }
+    .why-card p { font-size: 14px; color: #9ca3af; line-height: 1.7; }
 
     /* ── CONTACT ── */
     #contact { background: var(--light-gray); }
     .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: start;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 64px; align-items: start;
     }
     .contact-info h3 {
-      font-size: 22px;
-      font-weight: 700;
-      margin-bottom: 16px;
+      font-size: 22px; font-weight: 700; margin-bottom: 16px;
     }
-    .contact-info p {
-      font-size: 15px;
-      color: var(--gray);
-      line-height: 1.8;
-      margin-bottom: 32px;
+    .contact-info > p {
+      font-size: 15px; color: var(--gray); line-height: 1.8; margin-bottom: 32px;
     }
     .contact-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      margin-bottom: 20px;
+      display: flex; align-items: flex-start;
+      gap: 14px; margin-bottom: 20px;
     }
     .contact-item-icon {
-      width: 40px;
-      height: 40px;
-      min-width: 40px;
-      background: #fff;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      width: 42px; height: 42px; min-width: 42px;
+      background: #fff; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
     .contact-item-text strong {
-      display: block;
-      font-size: 13px;
-      font-weight: 600;
-      color: #111827;
-      margin-bottom: 2px;
+      display: block; font-size: 13px; font-weight: 600;
+      color: #111827; margin-bottom: 2px;
     }
     .contact-item-text span {
-      font-size: 14px;
-      color: var(--gray);
+      font-size: 14px; color: var(--gray);
     }
+    .contact-item-text a {
+      font-size: 14px; color: var(--orange); text-decoration: none;
+    }
+    .contact-item-text a:hover { text-decoration: underline; }
     .contact-form {
-      background: #fff;
-      border-radius: 20px;
-      padding: 40px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+      background: #fff; border-radius: 20px;
+      padding: 40px; box-shadow: 0 8px 32px rgba(0,0,0,0.06);
     }
-    .contact-form h3 {
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 24px;
-    }
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      margin-bottom: 16px;
-    }
-    .form-group label {
-      font-size: 13px;
-      font-weight: 600;
-      color: #374151;
-    }
+    .contact-form h3 { font-size: 20px; font-weight: 700; margin-bottom: 24px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+    .form-group label { font-size: 13px; font-weight: 600; color: #374151; }
     .form-group input,
     .form-group textarea,
     .form-group select {
-      padding: 11px 14px;
-      border: 1.5px solid #e5e7eb;
-      border-radius: 9px;
-      font-size: 14px;
-      font-family: inherit;
-      color: #111827;
-      background: #fff;
-      transition: border-color 0.2s;
-      outline: none;
-      resize: none;
+      padding: 11px 14px; border: 1.5px solid #e5e7eb;
+      border-radius: 9px; font-size: 14px; font-family: inherit;
+      color: #111827; background: #fff; transition: border-color 0.2s;
+      outline: none; resize: none;
     }
     .form-group input:focus,
     .form-group textarea:focus,
     .form-group select:focus { border-color: var(--orange); }
     .form-group textarea { min-height: 110px; }
     .form-submit {
-      width: 100%;
-      background: var(--orange);
-      color: #fff;
-      border: none;
-      padding: 14px 24px;
-      border-radius: 10px;
-      font-size: 15px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.2s;
-      font-family: inherit;
+      width: 100%; background: var(--orange); color: #fff;
+      border: none; padding: 14px 24px; border-radius: 10px;
+      font-size: 15px; font-weight: 600; cursor: pointer;
+      transition: background 0.2s; font-family: inherit;
     }
     .form-submit:hover { background: var(--orange-dark); }
 
@@ -564,116 +551,102 @@
     footer {
       background: var(--dark);
       color: #9ca3af;
-      padding: 60px 24px 32px;
+      padding: 72px 24px 32px;
     }
-    .footer-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
     .footer-top {
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 48px;
-      margin-bottom: 48px;
+      grid-template-columns: 2.2fr 1fr 1fr 1.2fr;
+      gap: 48px; margin-bottom: 48px;
     }
+    /* Footer logo: 3× original size (48px → 144px) */
     .footer-brand img {
-      height: 48px;
-      margin-bottom: 16px;
-      filter: brightness(0) invert(1);
-      opacity: 0.85;
+      height: 144px;
+      width: auto;
+      margin-bottom: 20px;
+      display: block;
     }
     .footer-brand p {
-      font-size: 14px;
-      line-height: 1.7;
-      max-width: 260px;
+      font-size: 14px; line-height: 1.7; max-width: 280px; margin-bottom: 8px;
+    }
+    .footer-brand-name {
+      font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 4px;
+    }
+    .footer-brand-addr {
+      font-size: 12px; line-height: 1.6; color: #6b7280;
     }
     .footer-col h4 {
-      font-size: 13px;
-      font-weight: 700;
-      color: #fff;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 16px;
+      font-size: 13px; font-weight: 700; color: #fff;
+      text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px;
     }
     .footer-col ul { list-style: none; }
     .footer-col ul li { margin-bottom: 10px; }
     .footer-col ul li a {
-      text-decoration: none;
-      font-size: 14px;
-      color: #9ca3af;
-      transition: color 0.2s;
+      text-decoration: none; font-size: 14px; color: #9ca3af; transition: color 0.2s;
     }
     .footer-col ul li a:hover { color: var(--orange); }
+    .footer-contact-item {
+      display: flex; gap: 10px; margin-bottom: 12px; align-items: flex-start;
+    }
+    .footer-contact-item span:first-child { font-size: 15px; margin-top: 1px; }
+    .footer-contact-item span:last-child { font-size: 13px; color: #9ca3af; line-height: 1.5; }
+    .footer-contact-item a { color: #9ca3af; text-decoration: none; }
+    .footer-contact-item a:hover { color: var(--orange); }
     .footer-bottom {
       border-top: 1px solid rgba(255,255,255,0.08);
       padding-top: 28px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      display: flex; justify-content: space-between; align-items: center;
       font-size: 13px;
     }
 
-    /* ── THANK YOU MODAL ── */
+    /* ── MODAL ── */
     .modal-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
+      display: none; position: fixed; inset: 0;
       background: rgba(0,0,0,0.5);
-      backdrop-filter: blur(4px);
-      z-index: 999;
-      align-items: center;
-      justify-content: center;
+      backdrop-filter: blur(4px); z-index: 999;
+      align-items: center; justify-content: center;
     }
     .modal-overlay.open { display: flex; }
     .modal {
-      background: #fff;
-      border-radius: 20px;
-      padding: 48px 40px;
-      max-width: 440px;
-      width: 90%;
-      text-align: center;
+      background: #fff; border-radius: 20px;
+      padding: 48px 40px; max-width: 440px;
+      width: 90%; text-align: center;
       box-shadow: 0 40px 80px rgba(0,0,0,0.2);
     }
     .modal-icon {
-      width: 72px;
-      height: 72px;
-      background: #dcfce7;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 36px;
-      margin: 0 auto 24px;
+      width: 72px; height: 72px; background: #dcfce7;
+      border-radius: 50%; display: flex;
+      align-items: center; justify-content: center;
+      font-size: 36px; margin: 0 auto 24px;
     }
     .modal h3 { font-size: 22px; font-weight: 800; margin-bottom: 10px; }
     .modal p { font-size: 15px; color: var(--gray); margin-bottom: 28px; line-height: 1.6; }
     .modal-close {
-      background: var(--orange);
-      color: #fff;
-      border: none;
-      padding: 12px 32px;
-      border-radius: 10px;
-      font-size: 15px;
-      font-weight: 600;
-      cursor: pointer;
-      font-family: inherit;
+      background: var(--orange); color: #fff; border: none;
+      padding: 12px 32px; border-radius: 10px;
+      font-size: 15px; font-weight: 600; cursor: pointer; font-family: inherit;
     }
 
     /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 36px; }
+    }
     @media (max-width: 900px) {
       .hero-inner,
       .services-feature,
       .about-grid,
-      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .contact-grid,
+      .mac-grid { grid-template-columns: 1fr; gap: 40px; }
       .hero-image-wrap { order: -1; }
       .hero-image-wrap img,
       .services-feature img,
       .about-image-wrap img { height: 300px; }
       .hero-stat-card { left: 12px; }
-      .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
-      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
       .nav-links { display: none; }
+      .nav-burger { display: flex; }
       .about-badge { top: -10px; right: -10px; }
+      .vmv-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
     }
     @media (max-width: 600px) {
       section { padding: 64px 20px; }
@@ -681,37 +654,52 @@
       .about-stats { grid-template-columns: repeat(3, 1fr); }
       .footer-top { grid-template-columns: 1fr; }
       .contact-form { padding: 28px 20px; }
+      .mac-fees { padding: 22px 20px; }
+      .nav-inner { height: 110px; }
+      .nav-logo img { height: 96px; }
+      .hero { padding-top: 110px; }
     }
+
+    /* Mobile nav open */
+    nav.open .nav-links {
+      display: flex; flex-direction: column;
+      position: absolute; top: 100%; left: 0; right: 0;
+      background: #fff; padding: 20px 24px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      gap: 16px; align-items: flex-start;
+    }
+    nav.open .nav-links .nav-cta { align-self: stretch; text-align: center; }
   </style>
 </head>
 <body>
 
-<!-- NAVIGATION -->
-<nav>
+<!-- ═══════════════════════════ NAVIGATION ═══════════════════════════ -->
+<nav id="mainNav">
   <div class="nav-inner">
+    <!-- Header: logo image only, no company name text -->
     <a href="#" class="nav-logo">
-      <img src="logo.png" alt="Right Fit Evidence Logo" />
-      <div class="nav-logo-text">
-        <span class="nav-logo-name">Right Fit Evidence</span>
-        <span class="nav-logo-tagline">Solutions Beyond Borders</span>
-      </div>
+      <img src="logo.png" alt="Right Fit Evidence" />
     </a>
-    <ul class="nav-links">
+    <ul class="nav-links" id="navLinks">
       <li><a href="#services">Services</a></li>
+      <li><a href="#mac">Migration Advisory</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#why">Why Us</a></li>
-      <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+      <li><a href="#contact" class="nav-cta">Contact Us</a></li>
     </ul>
+    <div class="nav-burger" id="burger" onclick="toggleNav()" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </div>
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- ═══════════════════════════ HERO ═══════════════════════════ -->
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-text">
       <div class="hero-badge"><span>✦</span> Solutions Beyond Borders</div>
-      <h1>Evidence-Based Solutions That <em>Drive Impact</em></h1>
-      <p class="hero-sub">We bridge the gap between research and real-world results — delivering rigorous, actionable evidence to organizations across the globe.</p>
+      <h1>Evidence-Based Solutions That <em>Drive Real Impact</em></h1>
+      <p class="hero-sub">Right Fit Evidence Pty Ltd delivers rigorous research, migration advisory, web development, and due diligence services from the heart of Maseru, Lesotho — and across the globe.</p>
       <div class="hero-actions">
         <a href="#contact" class="btn-primary">Work With Us</a>
         <a href="#services" class="btn-outline">Explore Services</a>
@@ -730,38 +718,53 @@
   </div>
 </section>
 
-<!-- SERVICES -->
+<!-- ═══════════════════════════ SERVICES ═══════════════════════════ -->
 <section id="services">
   <div class="section-inner">
     <div class="section-label">What We Do</div>
-    <h2 class="section-title">Comprehensive Evidence Solutions</h2>
-    <p class="section-sub">From research design to implementation, we provide end-to-end evidence services tailored to your context and goals.</p>
+    <h2 class="section-title">Comprehensive Solutions</h2>
+    <p class="section-sub">From evidence research to web development and migration guidance — we provide end-to-end professional services tailored to your context and goals.</p>
 
     <div class="services-grid">
       <div class="service-card">
         <div class="service-icon">🔬</div>
-        <h3>Research & Evaluation</h3>
+        <h3>Research &amp; Evaluation</h3>
         <p>Rigorous evaluations, impact assessments, and research designs that generate credible, decision-relevant evidence for programs and policies.</p>
       </div>
       <div class="service-card">
         <div class="service-icon">📊</div>
-        <h3>Data Analysis & Insights</h3>
+        <h3>Data Analysis &amp; Insights</h3>
         <p>Advanced quantitative and qualitative data analysis, visualization, and interpretation — turning raw data into clear, actionable insights.</p>
       </div>
       <div class="service-card">
         <div class="service-icon">📋</div>
-        <h3>Documentation & Reporting</h3>
-        <p>Professional documentation, technical reports, policy briefs, and communication materials crafted for diverse audiences and stakeholders.</p>
+        <h3>Documentation &amp; Reporting</h3>
+        <p>Professional technical reports, policy briefs, and communication materials crafted for diverse audiences, governments, and stakeholders.</p>
       </div>
       <div class="service-card">
         <div class="service-icon">🤝</div>
-        <h3>Consulting & Advisory</h3>
-        <p>Strategic consulting to help organizations build evidence ecosystems, improve decision-making, and strengthen monitoring & evaluation systems.</p>
+        <h3>Consulting &amp; Advisory</h3>
+        <p>Strategic consulting to help organizations build evidence ecosystems, improve decision-making, and strengthen monitoring &amp; evaluation systems.</p>
       </div>
       <div class="service-card">
         <div class="service-icon">🎓</div>
-        <h3>Training & Capacity Building</h3>
+        <h3>Training &amp; Capacity Building</h3>
         <p>Tailored workshops and training programs to build internal capacity for evidence generation, use, and management within your organization.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🛂</div>
+        <h3>Migration Advisory (MAC)</h3>
+        <p>Expert guidance on residence permits, work permits, citizenship, student visas and all immigration requirements in Lesotho and abroad.</p>
+      </div>
+      <div class="service-card highlight">
+        <div class="service-icon">💻</div>
+        <h3>Web Development</h3>
+        <p>Custom websites, web applications, and digital platforms — from clean business landing pages to fully functional data-driven web systems built for performance and longevity.</p>
+      </div>
+      <div class="service-card highlight">
+        <div class="service-icon">🔎</div>
+        <h3>Due Diligence</h3>
+        <p>Thorough background verification, entity checks, and risk assessments for business partnerships, investment decisions, procurement processes, and compliance requirements.</p>
       </div>
       <div class="service-card">
         <div class="service-icon">🌐</div>
@@ -780,14 +783,185 @@
           <li>Mixed-methods research design</li>
           <li>Real-time monitoring systems</li>
           <li>Stakeholder engagement and co-creation</li>
-          <li>Knowledge management and dissemination</li>
+          <li>Web platforms &amp; digital tools delivery</li>
+          <li>Due diligence &amp; compliance reporting</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
+<!-- ═══════════════════════════ MIGRATION ADVISORY CENTRE ═══════════════════════════ -->
+<section id="mac">
+  <div class="section-inner">
+    <div class="mac-header">
+      <div class="section-label">A Division of Right Fit Evidence Pty Ltd</div>
+      <h2 class="section-title">Migration Advisory Centre (MAC)</h2>
+      <p class="section-sub">Lesotho's trusted guide for safe &amp; legal migration. We help foreign nationals navigate visa, work permit, study abroad, and relocation processes — lawfully, transparently, and affordably.</p>
+    </div>
+
+    <div class="mac-grid">
+      <!-- Left column -->
+      <div>
+        <div class="mac-info-block">
+          <h3>MAC Services</h3>
+          <table class="mac-services-table">
+            <thead>
+              <tr>
+                <th>Service</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Visa Advisory</strong></td>
+                <td>Tourist, business, transit, and family visit visas</td>
+              </tr>
+              <tr>
+                <td><strong>Work &amp; Residence Permits</strong></td>
+                <td>Assistance with work visa applications &amp; renewal in Lesotho and abroad</td>
+              </tr>
+              <tr>
+                <td><strong>Study Abroad Guidance</strong></td>
+                <td>University applications + student visa support (China, Germany, Turkey, Canada, India)</td>
+              </tr>
+              <tr>
+                <td><strong>Permanent Residency &amp; Citizenship</strong></td>
+                <td>Step-by-step advice on safe long-term settlement options</td>
+              </tr>
+              <tr>
+                <td><strong>Document Verification</strong></td>
+                <td>Police clearance, notarization, and certified translations</td>
+              </tr>
+              <tr>
+                <td><strong>Pre-departure Orientation</strong></td>
+                <td>Cultural &amp; legal briefings before you travel</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mac-fees">
+          <h4>Fee Structure (One-time)</h4>
+          <div class="mac-fee-row">
+            <span class="mac-fee-label">Basic Eligibility Assessment</span>
+            <span class="mac-fee-price">M 300</span>
+          </div>
+          <div class="mac-fee-row">
+            <span class="mac-fee-label">Temporary Residence Permit Support</span>
+            <span class="mac-fee-price">M 1,500</span>
+          </div>
+          <div class="mac-fee-row">
+            <span class="mac-fee-label">Permanent Residence Application Support</span>
+            <span class="mac-fee-price">M 2,500</span>
+          </div>
+          <div class="mac-fee-row">
+            <span class="mac-fee-label">Citizenship Application Support</span>
+            <span class="mac-fee-price">M 3,500</span>
+          </div>
+          <div class="mac-fee-row">
+            <span class="mac-fee-label">Student Visa Package</span>
+            <span class="mac-fee-price">M 2,000</span>
+          </div>
+          <div class="mac-fee-row">
+            <span class="mac-fee-label">Work Permit Assistance</span>
+            <span class="mac-fee-price">From M 2,500</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p>"MAC helped me apply for my residence permit swiftly within 3 days which was later approved. They explained everything clearly. Ke a leboha!"</p>
+          <cite>— Gitonga L., Maseru</cite>
+        </div>
+      </div>
+
+      <!-- Right column -->
+      <div>
+        <div class="mac-info-block" style="margin-bottom:24px;">
+          <h3>Why Choose MAC?</h3>
+          <div class="mac-row">
+            <div class="mac-row-icon">✅</div>
+            <div class="mac-row-text">
+              <strong>Licensed &amp; Registered in Lesotho</strong>
+              <span>Fully compliant with all regulatory requirements.</span>
+            </div>
+          </div>
+          <div class="mac-row">
+            <div class="mac-row-icon">💰</div>
+            <div class="mac-row-text">
+              <strong>No Hidden Fees</strong>
+              <span>Fixed-price consultation — you always know what you pay.</span>
+            </div>
+          </div>
+          <div class="mac-row">
+            <div class="mac-row-icon">🔒</div>
+            <div class="mac-row-text">
+              <strong>Confidential &amp; Ethical</strong>
+              <span>We never falsify documents. Ever.</span>
+            </div>
+          </div>
+          <div class="mac-row">
+            <div class="mac-row-icon">📰</div>
+            <div class="mac-row-text">
+              <strong>Up-to-date Knowledge</strong>
+              <span>We track changing immigration laws and requirements continuously.</span>
+            </div>
+          </div>
+          <div class="mac-row">
+            <div class="mac-row-icon">🗣️</div>
+            <div class="mac-row-text">
+              <strong>Multilingual Staff</strong>
+              <span>English and Sesotho spoken — no language barriers.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mac-info-block" style="margin-bottom:24px;">
+          <h3>Our Operating Process</h3>
+          <div class="mac-row">
+            <div class="mac-row-icon">1️⃣</div>
+            <div class="mac-row-text">
+              <strong>Consultation</strong>
+              <span>Assess eligibility and understand your specific situation.</span>
+            </div>
+          </div>
+          <div class="mac-row">
+            <div class="mac-row-icon">2️⃣</div>
+            <div class="mac-row-text">
+              <strong>Agreement</strong>
+              <span>Sign an Immigration Consultation Agreement outlining fees, scope, and confidentiality.</span>
+            </div>
+          </div>
+          <div class="mac-row">
+            <div class="mac-row-icon">3️⃣</div>
+            <div class="mac-row-text">
+              <strong>Process Management</strong>
+              <span>Step-by-step guidance through document collection and application submission support.</span>
+            </div>
+          </div>
+          <div class="mac-row">
+            <div class="mac-row-icon">🕒</div>
+            <div class="mac-row-text">
+              <strong>Hours</strong>
+              <span>Mon–Fri: 8:30 AM – 5:00 PM · Walk-ins welcome for first inquiry</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mac-disclaimer">
+          <strong>Disclaimer</strong>
+          The Migration Advisory Centre's services are strictly limited to advice and guidance. Under no circumstances does the Centre have the authority to grant or deny any residence or work permit. That authority rests solely with the Government of Lesotho.
+        </div>
+        <div class="mac-warning">
+          <strong>⚠️ Warning Against Fraud</strong>
+          MAC does not guarantee approval of visa, residence or work permits — no one can. If another agent promises guaranteed approval, report them to the nearest Lesotho Police Station or Immigration Office.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ ABOUT ═══════════════════════════ -->
 <section id="about">
   <div class="section-inner">
     <div class="about-grid">
@@ -800,10 +974,21 @@
       </div>
       <div class="about-text">
         <div class="section-label">About Us</div>
-        <h2 class="section-title">Who We Are</h2>
-        <p>Right Fit Evidence is a multidisciplinary firm dedicated to generating and using high-quality evidence to improve lives. Our team of researchers, analysts, and consultants brings deep expertise across development, health, education, and governance sectors.</p>
-        <p>We believe the right evidence, in the right hands, at the right time, can transform outcomes. That's why we go beyond data collection — we ensure evidence is relevant, timely, and embedded in decisions that matter.</p>
-        <p>Working across borders and cultures, we combine global best practices with deep local knowledge to deliver solutions that truly fit each context.</p>
+        <h2 class="section-title">Right Fit Evidence Pty Ltd</h2>
+        <p>Right Fit Evidence (RFE) Pty Ltd is a multidisciplinary professional services firm based in Maseru, Lesotho. We were established to provide evidence-based research, migration advisory, web development, due diligence, and consulting services to individuals, businesses, governments and NGOs — locally and across borders.</p>
+        <p>We believe the right evidence, in the right hands, at the right time, can transform outcomes. That's why we go beyond data collection — we ensure our outputs are relevant, timely, and embedded in decisions that matter.</p>
+
+        <div class="vmv-grid">
+          <div class="vmv-card">
+            <h4>Vision</h4>
+            <p>A Lesotho where all foreign nationals lawfully reside and work with dignity, clarity, and ease — and where evidence drives every important decision.</p>
+          </div>
+          <div class="vmv-card">
+            <h4>Mission</h4>
+            <p>To contribute to ethical, evidence-informed progress by equipping clients with professional guidance, rigorous research, and technology-driven solutions.</p>
+          </div>
+        </div>
+
         <div class="about-stats">
           <div class="about-stat">
             <div class="about-stat-num">200+</div>
@@ -823,7 +1008,34 @@
   </div>
 </section>
 
-<!-- WHY US -->
+<!-- ═══════════════════════════ CORE VALUES ═══════════════════════════ -->
+<section id="values">
+  <div class="section-inner">
+    <div class="section-label">What We Stand For</div>
+    <h2 class="section-title">Our Core Values</h2>
+    <p class="section-sub">Every engagement, every deliverable, every interaction is guided by the same principles.</p>
+    <div class="values-grid">
+      <div class="value-card">
+        <h3>Integrity</h3>
+        <p>Operating with the highest ethical standards — ensuring data security, compliance, and maintaining trust with every client and partner.</p>
+      </div>
+      <div class="value-card">
+        <h3>Collaboration</h3>
+        <p>Working as one enabling team that partners with governments, authorities, communities, and clients toward shared goals.</p>
+      </div>
+      <div class="value-card">
+        <h3>Customer Centricity</h3>
+        <p>Focusing on delivering seamless experiences and value-added services — your needs shape everything we produce.</p>
+      </div>
+      <div class="value-card">
+        <h3>Rigor &amp; Quality</h3>
+        <p>Applying the highest standards of research integrity, combining quantitative precision with qualitative depth in every project.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ WHY US ═══════════════════════════ -->
 <section id="why">
   <div class="section-inner">
     <div class="section-label">Why Right Fit Evidence</div>
@@ -833,49 +1045,74 @@
       <div class="why-card">
         <div class="why-num">01</div>
         <h3>Context-Sensitive Approach</h3>
-        <p>Every solution is tailored to your specific environment, culture, and constraints — no cookie-cutter templates.</p>
+        <p>Every solution is tailored to your specific environment, culture, and constraints — no cookie-cutter templates, ever.</p>
       </div>
       <div class="why-card">
         <div class="why-num">02</div>
         <h3>Rigorous Methodology</h3>
-        <p>We apply the highest standards of research integrity, combining quantitative precision with qualitative depth.</p>
+        <p>We apply the highest standards of research integrity, combining quantitative precision with qualitative depth across all disciplines.</p>
       </div>
       <div class="why-card">
         <div class="why-num">03</div>
         <h3>Actionable Outputs</h3>
-        <p>Our deliverables are designed to be used — clear, accessible, and directly connected to decision-making processes.</p>
+        <p>Our deliverables are designed to be used — clear, accessible, and directly connected to real decisions and real outcomes.</p>
       </div>
       <div class="why-card">
         <div class="why-num">04</div>
         <h3>Trusted Partnership</h3>
-        <p>We build long-term relationships built on transparency, reliability, and a genuine commitment to your success.</p>
+        <p>We build long-term relationships founded on transparency, confidentiality, and a genuine commitment to your success.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">05</div>
+        <h3>Local Expertise, Global Standards</h3>
+        <p>Based in Maseru with deep knowledge of Lesotho's legal and regulatory environment — applied with international best practices.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">06</div>
+        <h3>Full-Service Capability</h3>
+        <p>Research, web development, migration, due diligence — one firm, one point of contact, comprehensive expertise.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
+<!-- ═══════════════════════════ CONTACT ═══════════════════════════ -->
 <section id="contact">
   <div class="section-inner">
     <div class="section-label">Get In Touch</div>
     <h2 class="section-title">Let's Work Together</h2>
-    <p class="section-sub">Ready to find the right fit? Reach out and let's discuss how we can support your evidence needs.</p>
+    <p class="section-sub">Ready to find the right fit? Reach out and let's discuss how we can support your needs. We typically respond within 24 hours.</p>
     <div class="contact-grid">
       <div class="contact-info">
-        <h3>We'd love to hear from you</h3>
-        <p>Whether you have a specific project in mind or just want to explore what's possible, we're here to help. Our team typically responds within 24 hours.</p>
+        <h3>Right Fit Evidence Pty Ltd</h3>
+        <p>Whether you have a specific project in mind or just want to explore what's possible, our team is here to help.</p>
+
         <div class="contact-item">
-          <div class="contact-item-icon">📧</div>
+          <div class="contact-item-icon">📍</div>
           <div class="contact-item-text">
-            <strong>Email Us</strong>
-            <span>info@rightfitevidence.com</span>
+            <strong>Physical Address</strong>
+            <span>Ha Hoohlo Plot 2159<br />Maseru, Lesotho</span>
           </div>
         </div>
         <div class="contact-item">
           <div class="contact-item-icon">📞</div>
           <div class="contact-item-text">
-            <strong>Call Us</strong>
-            <span>+1 (555) 000-0000</span>
+            <strong>Telephone / WhatsApp</strong>
+            <a href="tel:+26662505116">+266 6250 5116</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">📧</div>
+          <div class="contact-item-text">
+            <strong>Email</strong>
+            <a href="mailto:info@rfe.co.ls">info@rfe.co.ls</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">🕒</div>
+          <div class="contact-item-text">
+            <strong>Office Hours</strong>
+            <span>Monday – Friday: 8:30 AM – 5:00 PM<br />Walk-ins welcome (first inquiry)</span>
           </div>
         </div>
         <div class="contact-item">
@@ -886,6 +1123,7 @@
           </div>
         </div>
       </div>
+
       <div class="contact-form">
         <h3>Send Us a Message</h3>
         <form id="contactForm" onsubmit="handleSubmit(event)">
@@ -904,21 +1142,28 @@
             <input type="email" id="email" placeholder="jane@organization.org" required />
           </div>
           <div class="form-group">
+            <label for="phone">Phone / WhatsApp (optional)</label>
+            <input type="tel" id="phone" placeholder="+266 ..." />
+          </div>
+          <div class="form-group">
             <label for="service">Service of Interest</label>
             <select id="service">
               <option value="">Select a service...</option>
-              <option>Research & Evaluation</option>
-              <option>Data Analysis & Insights</option>
-              <option>Documentation & Reporting</option>
-              <option>Consulting & Advisory</option>
-              <option>Training & Capacity Building</option>
+              <option>Research &amp; Evaluation</option>
+              <option>Data Analysis &amp; Insights</option>
+              <option>Documentation &amp; Reporting</option>
+              <option>Consulting &amp; Advisory</option>
+              <option>Training &amp; Capacity Building</option>
+              <option>Migration Advisory (MAC)</option>
+              <option>Web Development</option>
+              <option>Due Diligence</option>
               <option>Cross-Border Collaboration</option>
               <option>Other</option>
             </select>
           </div>
           <div class="form-group">
             <label for="message">Message</label>
-            <textarea id="message" placeholder="Tell us about your project or question..." required></textarea>
+            <textarea id="message" placeholder="Tell us about your project or enquiry..." required></textarea>
           </div>
           <button type="submit" class="form-submit">Send Message →</button>
         </form>
@@ -927,54 +1172,79 @@
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
 <footer>
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
+        <!-- Footer logo: 3× original size (48px → 144px) -->
         <img src="logo.png" alt="Right Fit Evidence" />
-        <p>Evidence-based solutions that drive real-world impact across borders, sectors, and contexts.</p>
+        <div class="footer-brand-name">Right Fit Evidence Pty Ltd</div>
+        <div class="footer-brand-addr">
+          Ha Hoohlo Plot 2159<br />
+          Maseru, Lesotho
+        </div>
       </div>
+
       <div class="footer-col">
         <h4>Services</h4>
         <ul>
-          <li><a href="#services">Research & Evaluation</a></li>
+          <li><a href="#services">Research &amp; Evaluation</a></li>
           <li><a href="#services">Data Analysis</a></li>
           <li><a href="#services">Documentation</a></li>
           <li><a href="#services">Consulting</a></li>
           <li><a href="#services">Training</a></li>
+          <li><a href="#services">Web Development</a></li>
+          <li><a href="#services">Due Diligence</a></li>
+          <li><a href="#mac">Migration Advisory</a></li>
         </ul>
       </div>
+
       <div class="footer-col">
         <h4>Company</h4>
         <ul>
-          <li><a href="#about">About Us</a></li>
+          <li><a href="#about">About RFE</a></li>
+          <li><a href="#values">Our Values</a></li>
           <li><a href="#why">Why Us</a></li>
+          <li><a href="#mac">MAC Division</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
+
       <div class="footer-col">
-        <h4>Connect</h4>
-        <ul>
-          <li><a href="#">LinkedIn</a></li>
-          <li><a href="#">Twitter / X</a></li>
-          <li><a href="#">ResearchGate</a></li>
-        </ul>
+        <h4>Contact Us</h4>
+        <div class="footer-contact-item">
+          <span>📧</span>
+          <span><a href="mailto:info@rfe.co.ls">info@rfe.co.ls</a></span>
+        </div>
+        <div class="footer-contact-item">
+          <span>📞</span>
+          <span><a href="tel:+26662505116">+266 6250 5116</a></span>
+        </div>
+        <div class="footer-contact-item">
+          <span>📍</span>
+          <span>Ha Hoohlo Plot 2159,<br />Maseru, Lesotho</span>
+        </div>
+        <div class="footer-contact-item">
+          <span>🕒</span>
+          <span>Mon–Fri: 8:30 AM – 5:00 PM</span>
+        </div>
       </div>
     </div>
+
     <div class="footer-bottom">
-      <span>&copy; 2025 Right Fit Evidence. All rights reserved.</span>
-      <span>Solutions Beyond Borders</span>
+      <span>&copy; 2025 Right Fit Evidence Pty Ltd. All rights reserved.</span>
+      <span style="color:var(--orange);">Solutions Beyond Borders</span>
     </div>
   </div>
 </footer>
 
-<!-- THANK YOU MODAL -->
+<!-- ═══════════════════════════ THANK YOU MODAL ═══════════════════════════ -->
 <div class="modal-overlay" id="thankYouModal">
   <div class="modal">
     <div class="modal-icon">✓</div>
     <h3>Message Sent!</h3>
-    <p>Thank you for reaching out. Our team will review your message and get back to you within 24 hours.</p>
+    <p>Thank you for reaching out to Right Fit Evidence. Our team will review your message and respond within 24 hours.</p>
     <button class="modal-close" onclick="closeModal()">Close</button>
   </div>
 </div>
@@ -988,14 +1258,22 @@
   function closeModal() {
     document.getElementById('thankYouModal').classList.remove('open');
   }
-
-  // Smooth active nav highlight
+  function toggleNav() {
+    document.getElementById('mainNav').classList.toggle('open');
+  }
+  // Close mobile nav when a link is clicked
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.getElementById('mainNav').classList.remove('open');
+    });
+  });
+  // Active nav highlight on scroll
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
   window.addEventListener('scroll', () => {
     let current = '';
     sections.forEach(s => {
-      if (window.scrollY >= s.offsetTop - 80) current = s.id;
+      if (window.scrollY >= s.offsetTop - 160) current = s.id;
     });
     navLinks.forEach(a => {
       a.style.color = a.getAttribute('href') === '#' + current ? '#f97316' : '';
